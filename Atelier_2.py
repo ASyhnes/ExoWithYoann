@@ -77,3 +77,53 @@ if ( M in Mois ) :
 else:
     print ("Consigne pas respéctée")
 
+'''Exercice 4 (secondaire) :
+Écrire un programme pour vérifier si un nombre est pair ou impair en utilisant if-else.
+'''
+
+A = int(input("Rentrez un nombre entier"))
+print(type(A))
+
+if A%2 == 0:
+    print("le nombre est pair")
+else:
+    print("le nombre est impaire")
+
+    '''Exercice 5 (secondaire) :
+Écrire un programme qui demande de saisir 2 chaînes de caractères et qui affiche la plus
+grande des 2 chaînes (celle qui a le plus de caractères).
+Indice : Chercher sur internet une fonction qui retourne le nombre de caractères d’un str'''
+
+P = input("Rentrez une chaine de caractères")
+Q = input("Rentrez une chaine de caractères")
+
+if len(P)>len(Q):
+    print("la plus grande chaine de caractére est", P, len(P))
+
+elif len(Q)>len(P):
+    print("la plus grande chaine de caractére est", Q, len(Q))
+
+else:
+    print("Les deux chaine de caractères on le même nombre de caractères")
+
+'''Exercice 6 (secondaire) :
+Écrire un programme qui demande à l’utilisateur de saisir un caractère. Le programme doit
+afficher le message suivant si le caractère est une voyelle : “Le caractère a est une voyelle”, le
+message suivant si le caractères est une consonne : “Le caractère b est une consonne”, sinon
+le programme doit afficher le message suivant : “Le caractères ne fait pas partie de l’alphabet”.
+Le programme doit pouvoir fonctionner à la fois des caractères majuscules et minuscule'''
+
+
+P = input("Rentrez un caractère")
+
+if P.lower() in voyelles :
+    print('la lettre rentrée est une voyelle')
+
+elif P.lower() in consonne:
+    print('la lettre rentrée est une consonne')
+
+elif P.lower() in semi_consonne:
+    print("la lettre rentrée est une semi-consonne")
+
+else:
+    print("Le caractères ne fait pas partie de l’alphabet")

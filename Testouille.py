@@ -1,26 +1,20 @@
+voyelles = ('aeiou')
+consonne = ('bcdfghjklmnpqrstvwxz')
+semi_consonne = ('y')
+P = input("Rentrez un caractère")
+
+if P.lower() in voyelles :
+    print('la lettre rentrée est une voyelle')
+
+elif P.lower() in consonne:
+    print('la lettre rentrée est une consonne')
+
+elif P.lower() in semi_consonne:
+    print("la lettre rentrée est une semi-consonne")
+
+else:
+    print("Le caractères ne fait pas partie de l’alphabet")
 
 
-Mois = {
-            "janvier": 1,
-            "février": 2,
-            "mars": 3,
-            "avril": 4,
-            "mai": 5,
-            "juin": 6,
-            "juillet": 7,
-            "aout": 8,
-            "septembre": 9,
-            "octobre": 10,
-            "novembre": 11,
-            "décembre": 12,
 
 
-}
-
-
-
-M = input("Rentrez le nom d'un mois (avec les majuscules et les accents")
-
-M = M.lower()
-
-print (M)
