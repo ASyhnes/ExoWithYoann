@@ -116,6 +116,10 @@ Le programme doit pouvoir fonctionner à la fois des caractères majuscules et m
 
 P = input("Rentrez un caractère")
 
+voyelles = ["a","e","i","o","u"]
+consonne = ['b','c','d','f','g','h','j','k','l','m','n','p','q','r','s','t','v','w','x','z']
+semi_consonne = ['y']
+
 if P.lower() in voyelles :
     print('la lettre rentrée est une voyelle')
 

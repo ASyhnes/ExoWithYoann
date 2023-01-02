@@ -16,16 +16,15 @@ print (JSemaine)
 print (JSemaine[0],JSemaine[-1])
 
 '- Afficher la quatrième valeur de la liste semaine.'
-print (JSemaine[4])
+print (JSemaine[3])
 
 '- Remplacer le jour de la semaine “samedi” par “dimanche”.'
 JSemaine = [elem.replace('Samedi', 'Dimanche') for elem in JSemaine]
 print (JSemaine)
 
 '- Échanger le premier et le dernier élément de la liste.'
-idx1 = JSemaine.index(JSemaine[0])
-idx2 = JSemaine.index(JSemaine[-1])
-JSemaine[idx1], JSemaine[idx2] = JSemaine[idx2], JSemaine[idx1]
+
+JSemaine[0], JSemaine[-1] = JSemaine[-1], JSemaine[0]
 print(JSemaine)
 
 
