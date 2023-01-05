@@ -73,19 +73,22 @@ for i in range(h):
     print(simbol*l)
 
 #Exercice 5 (secondaire) :
-#En utilisant une boucle for, créer un programme qui affiche un sapin (taille décidé par
-#l’utilisateur) comme ci-dessous.
+#En utilisant une boucle for, créer un programme qui affiche un sapin ,taille décidé par
+#l’utilisateur.
+def print_sapin(n):
+    for size in range(1, (n*2) + 1, 2):
+#n*2 a pour objectif de compenser la perte de hauteur mise en place par le step du range précédent:
+#en effet, l'utilisateur demande une hauteur de 9 mais l'ago print avec un step de 2
+        print((size * "^").center(n*2))
 
-h = int(input("choissisez une hauteur de sapin"))
-e = " "
-t = "^"
+print_sapin(int(input("choissisez une hauteur de sapin")))
+
+#Exercice 6 (ultime) :
+#Créer un programme qui demande à l’utilisateur de saisir un nombre entier, puis afficher le
+#symbole triforce de zelda avec un nombre de lignes correspondant au nombre saisi.
 
 
-for i in range(h):
-    print(e*h,t*i)
-    h -= 1
-    i += 1
-
+#je reprend l'algorytme mise en place au dessus:
 
 
 
