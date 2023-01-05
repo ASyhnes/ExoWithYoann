@@ -17,8 +17,8 @@ listeanimaux = ["baleine","chien","chat","brebis","loup"]
 
 for animal in listeanimaux:
     print(animal)
-for i in range (0,(len(listeanimaux))):
-    print (listeanimaux[i],i)
+for i in range(0,(len(listeanimaux))):
+    print(listeanimaux[i],i)
 
 #Exercice 2 (clé) :
 #1) Créer une variable égale à 0.
@@ -70,7 +70,7 @@ for i in range(h):
 
 simbol = (input("choisissez un symbol, une lettre, un chiffre..."))
 for i in range(h):
-    print (simbol*l)
+    print(simbol*l)
 
 #Exercice 5 (secondaire) :
 #En utilisant une boucle for, créer un programme qui affiche un sapin (taille décidé par
