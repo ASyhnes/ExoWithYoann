@@ -1,8 +1,5 @@
-n = int(input("Saisissez un nombre entier : "))
+base_total = range(0, 4)
 
-for i in range(n):
-    print(" /\ ")
-    print(" /\ ")
-    print("/", " ", ":" )
-    print("\/\/")
-    print(" || ")
+index = base_total[2]
+
+print(index)

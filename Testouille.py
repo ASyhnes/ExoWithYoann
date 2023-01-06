@@ -6,7 +6,7 @@
 
 
 def print_triangle(base):
-    for l in range(1,3):
+    for l in index: "a reprendre demain"
         space = ((base * 2) - 1)
         for i in range(1, (base*2) + 1, 2):
             x = ((space * '.'), ('*' * i), (space  * "."))
@@ -17,4 +17,14 @@ def print_triangle(base):
 
 print("Choisissez la taille de votre Triangle :")
 base = 6
+base_total = range(0, 3)
+index = base_total[-1]
 print_triangle(base)
+
+
+'''reflechir avec:
+base_total = range(0, 4)
+
+index = base_total[-1]
+
+print(index)'''
