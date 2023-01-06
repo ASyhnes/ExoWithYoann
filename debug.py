@@ -1,13 +1,8 @@
-def print_multiforce(n,p):
-    step = range(1, ((n * 2) + 1)*p, 2)
-    base_total = step[-1]
-    for sietri in range(1, p+1):
-        for size in range(1, (n*2) + 1, 2):
-            print((((size * "^").center(n*2))*sietri).center(base_total))
+def print_multiforce(n, p):
+    for i in range(p):
+        for j in range(1, (n * 2) + 1, 2):
+            print((j * "^").center(n * 2))
 
-
-
-
-hauteur_triangle = 4
-hauteur_triforce = 4
-print_multiforce(hauteur_triangle, hauteur_triforce)
+n = int(input("Choisissez la hauteur d'un triangle : "))
+p = int(input("Choisissez la hauteur de votre multiforce : "))
+print_multiforce(n, p)
