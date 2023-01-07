@@ -3,13 +3,19 @@
 #par 2.
 #2) Créer une fonction qui retourne la moyenne de 2 nombres.
 
-def function(n):
-    somme = n * 2
+def deuxnombres(n,m):
+    somme = n * m
     print("le nombre multiplié par 2 donne :",somme)
 
-n = int(input("Choisissez un nombre : "))
-function(n)
+n = int(input("Choisissez un nombre : "))6
+m = int(input("Choisissez un nombre : "))
+deuxnombres(n,m)
 
+def moyennedeuxnombres(n,m):
+    moy = (n * m)/2
+    print("la moyenne des deux nombres donne :", moy)
+
+moyennedeuxnombres(n,m)
 
 #Exercice 2 (clé) :
 #1) Créer une fonction qui prend en entrée 2 nombres et qui retourne le plus grand de ces 2
@@ -21,7 +27,7 @@ function(n)
 #4) Modifier le programme pour que celui-ci prenne en compte le cas où les nombres sont
 #égaux.
 
-def function_A(n1,n2):
+def deuxnombre_A(n1,n2):
     f = "le plus grand nombre est :"
     if n1>n2:
         print(f)
@@ -33,7 +39,7 @@ def function_A(n1,n2):
         resulta = "les nombres sont égaux"
     return resulta
 
-print(function_A(int(input("Choisissez un nombre : ")),int(input("Choisissez un deuxiéme nombre : "))))
+print(deuxnombre_A(int(input("Choisissez un nombre : ")),int(input("Choisissez un deuxiéme nombre : "))))
 
 
 #Exercice 3 (clé) :
@@ -48,7 +54,7 @@ def aire_triangle(b,h):
 print("la surface du triangle est de :",aire_triangle(int(input("Choisissez un nombre pour la base du triangle : ")), int(input("Choisissez un nombre pour la hauteur du triangle : "))))
 
 def hypot_triangle(a,b):
-    hypot = (a ** 2 + b ** 2) ** 0.5
+    hypot = (a ** 2 + b ** 2) ** 0.5 #il existe aussi la fonction sqrt pour les racines6
     return hypot
 
 print("l'hypoténuse du triangle est de :",hypot_triangle(int(input("Choisissez un nombre pour le plus petit coté : ")), int(input("Choisissez un nombre pour le plus grand coté : "))))
