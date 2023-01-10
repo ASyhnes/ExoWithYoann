@@ -1,13 +1,23 @@
-def print_multiforce(n,p):
-    step = range(1, ((n * 2) + 1)*p, 2)
-    base_total = step[-1]                   #<=permet d'indexer la valeur de la largeur total du triforce
-    for sietri in range(1, p+1):            #<+defini la hauteur du triforce
-        for size in range(1, (n*2) + 1, 2):                    #<=defini la hauteur d'un triangle seul
-            print((((size * "^").center(n*2))*sietri).center(base_total))        #<=permet de centrer chaque ligne
-                                                                                    # du triforce
+import random
+z = int(input("choisissez un nombre: "))
+y = z
+listenb = []
+def is_list_empty(list):
+    return list == []
 
 
-n = int(input("Choisissez la hauteur d'un triangle : "))
-p = int(input("Choisissez la hauteur de votre multiforce : "))
+for i in range(0, z):
+    if sum(listenb)<z:
+        if is_list_empty(listenb):
+            n = (random.randint(1, y))
+            listenb.append(n)
 
-print_multiforce(n, p)
+
+        else:
+            x = y - listenb[-1]
+            n = (random.randint(1, x))
+            listenb.append(n)
+            y = x
+
+print(listenb)
+print("la somme des nombres de cette liste est: ", sum(listenb))

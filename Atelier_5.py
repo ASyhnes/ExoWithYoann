@@ -7,7 +7,7 @@ def deuxnombres(n,m):
     somme = n * m
     print("le nombre multiplié par 2 donne :",somme)
 
-n = int(input("Choisissez un nombre : "))6
+n = int(input("Choisissez un nombre : "))
 m = int(input("Choisissez un nombre : "))
 deuxnombres(n,m)
 
@@ -143,3 +143,27 @@ print("il y a ", nb_chara_phrase(ph), " charactéres dans votre phrase.")
 #Exercice 7 (secondaire) :
 #1) Créer un programme qui prend en entrée un nombre et qui retourne une liste de nombre
 #entier aléatoire dont l’addition vaut le nombre en entrée.
+
+import random
+z = int(input("choisissez un nombre: "))
+y = z
+listenb = []
+def is_list_empty(list):
+    return list == []
+
+
+for i in range(0, z):
+    if sum(listenb)<z:
+        if is_list_empty(listenb):
+            n = (random.randint(1, y))
+            listenb.append(n)
+
+
+        else:
+            x = y - listenb[-1]
+            n = (random.randint(1, x))
+            listenb.append(n)
+            y = x
+
+print(listenb)
+print("la somme des nombres de cette liste est: ", sum(listenb))
