@@ -119,3 +119,4 @@ print(clou_charpente)
 # repeindre le marteau
 hammer_david.paint("yellow")
 print(hammer_david)
+
