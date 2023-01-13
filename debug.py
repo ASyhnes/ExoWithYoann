@@ -1,34 +1,29 @@
-'''"si ma liste est vide:"
-    "generer un nombre aléatoire compris entre 0 et  ma base"
-    "ajouter se nombre a ma liste"
+class Rectangle:
+    def __init__(self, length, width, color="red"):
+        self.length = length
+        self.width = width
+        self.color = color
 
-"sinon:"
-    "prendre le dernier nombre de la liste et le sousstraire de ma base"
-        "si le resultat est positif"
-            " recuperer le resultat et en faire ma nouvelle base""
-            "generer un nombre aléatoire compris entre 0 et  ma base"
-            "ajouter se nombre a ma liste'''
+rectangle1 = Rectangle(5, 3)
 
-import random
-z = int(input("choisissez un nombre: "))
-y = z
-listenb = []
-def is_list_empty(list):
-    return list == []
+print(rectangle1.length)
+
+class Voiture:
+    @staticmethod
+    def get_definition():
+        """Donne la définition d'un oiseau."""
+        return (
+        "Animal (vertébré à sang chaud) au corps recouvert de plumes, "
+        "dont les membres antérieurs sont des ailes et qui a un bec."
+        )
+    def __init__(self, modele, marque, prix):
+        self.modele = modele
+        self.marque = marque
+        self.nbr_siege = nbr_siege
+        self.distance = distance
+
+voiture1 = Voiture('modus','renaud',4000)
+voiture2 = Voiture('ModeleS','Tesla',65000)
 
 
-for i in range(0, z):
-    if sum(listenb)<z:
-        if is_list_empty(listenb):
-            n = (random.randint(1, y))
-            listenb.append(n)
-
-
-        else:
-            x = y - listenb[-1]
-            n = (random.randint(1, x))
-            listenb.append(n)
-            y = x
-
-print(listenb)
-print("la somme des nombres de cette liste est: ", sum(listenb))
+print(voiture2.modele)
