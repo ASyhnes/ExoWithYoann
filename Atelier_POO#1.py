@@ -12,17 +12,19 @@
 #Créer un objet à partir de cette classe puis afficher les attributs de cet obje
 
 class Voiture:
-    @staticmethod
+
+    def __init__(self,modele,marque,prix):
+        self.modele = modele
+        self.marque = marque
+        self.prix = prix
+
+   @staticmethod #definir la fonction du dessous>static signifie collé à la classe
     def get_definition():
         #Donne la définition d'une voiture.
         return (
         "on monte dedans, ça a des roue \n"
         "et ça avance."
         )
-    def __init__(self,modele,marque,prix):
-        self.modele = modele
-        self.marque = marque
-        self.prix = prix
 
 voiture1 = Voiture('Modus','Renaud',4000)
 voiture2 = Voiture('Model S','Tesla',65000)
@@ -32,19 +34,28 @@ print(voiture2.modele)
 print(Voiture.get_definition())
 
 class Avion:
-    @staticmethod
-    def get_definition():
-        #Donne la définition d'un avion.
-        return (
-        "on monte dedans, ça a des ailles \n"
-        "et ça avance, mais en vollant."
-        )
+
     def __init__(self,modele,marque,nbr_siege,distance):
         self.modele = modele
         self.marque = marque
         self.nbr_siege = nbr_siege
         self.distance = distance
 
+    @staticmethod
+    def get_definition():
+        # Donne la définition d'un avion.
+        return (
+            "on monte dedans, ça a des ailles \n"
+            "et ça avance, mais en vollant."
+        )
+
+    #def __str__() réécrire cette fonction pour correction de l'exercice 1:
+
+    '''def __str__():
+    "Cet avion est un " + self.modele + " de la marque " + self.marque....
+    
+    print(avion1) (a vérifier)
+'''
 avion1 = Avion('A480','Airbus',40, 50000)
 avion2 = Avion('A330','Airbus',67,400000)
 
@@ -179,14 +190,15 @@ class Personne:
 
     def calc_imc(self):
         imc = self.poids/self.taille**2
-        print("l'IMC est de: ", imc)
+        print("l'IMC est de: ", imc)  #ne jamais print dans une fonction
         return(imc)
 
 
     def interp_imc(self):
         # !!!!!!!!avoir pendant la correction: e n'ai pas trés bien saisi comment une méthode peut en appeller une autre:
         #la methode "def calcimc" me permet de calculer l'imc. J'aimerai ne pas avoir à le refaire une deuxiéme fois
-        #comme fait pour le moment dans "def interpimc"
+        #comme fait pour le moment dans "def interpimc" #correction a effectuer en fonction de celle du dessus
+
         imc = self.poids / self.taille ** 2
         if imc <= 18.5:
             print("Insuffisance pondérale")
@@ -222,4 +234,5 @@ juju.interp_imc()
 #3. Supprimer un article par référence.
 #4. Modifier un article par référence.
 #5. Rechercher un article par nom.
-#6. Rechercher un article par
+#6. Rechercher un article par  intervalle de prix de vente.
+#7. Afficher tous les articles
