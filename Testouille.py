@@ -50,7 +50,7 @@ class Programm:
 
 
 
-
+#debut du programe
 
 
 Gestionstock = Programm()
@@ -68,7 +68,7 @@ print(choix)
 x = input()
 def choix_multiple():
     print(choix)
-    x = input()
+
 
 
 while x != 7:
@@ -105,5 +105,6 @@ while x != 7:
         print("debug boucle a recommancer")
 
     choix_multiple()
+    x = int(input())
 
         ###"!!!j'arrétte avec la problématique suivante: mon choix multiple ne fonctionne pas et ma boucle reste boucler sur la fonction initialement choisi dans X
