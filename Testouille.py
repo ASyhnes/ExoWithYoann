@@ -26,6 +26,10 @@ class Article:
         self.prixvente = prixvente
         self.quantstock = quantstock
 
+    def __repr__(self):
+        """Représentation de l'article."""
+        return f" {self.nbref, self.nom, self.prixvente, self.quantstock}"
+
 
 class Programm:
     """Creer le programme."""
@@ -36,7 +40,8 @@ class Programm:
 
     def add_artcl(self, artcl):
         """Ajoute un article."""
-        self.stock.append(artcl)
+        y = input("ref 3 nombre \n"), input("nom de l'article \n"), input("prix \n"), input("quantité en stock ? \n")
+        self.stock.append(y)
 
     def remove_artcl(self, artcl):
         """Enleve un article."""
@@ -45,33 +50,60 @@ class Programm:
 
 
 
-print("que souhaitez vous faire:"
-      "\n 1: ajouter un article " #(en verifier qu'il a une ref unique)
+
+
+
+Gestionstock = Programm()
+
+choix = ("que souhaitez vous faire:"
+      "\n 1: ajouter un article "  # (en verifier qu'il a une ref unique)
       "\n 2: rechercher un article par ref "
       "\n 3: rechercher un article par nom"
-      "\n 4: rechercher un article par prix" #liste de tranche de prix
+      "\n 4: rechercher un article par prix"  # liste de tranche de prix
       "\n 5: afficher tout les articles"
-      "\n 6: modifier un article") #liste choix>modifier
+      "\n 6: modifier un article"  # liste choix>modifier
+      "\n 7: End")
 
+print(choix)
 x = input()
+def choix_multiple():
+    print(choix)
+    x = input()
 
-if x == str(1):
-    print("debug1")
 
-elif x == str(2):
-    print("debug2")
+while x != 7:
+    if x == str(1):
+        y = Article("","","","")
+        Gestionstock.add_artcl(y)
+        #debug
+        print(y)
+        print("debug1")
+        print(Gestionstock.stock)
 
-elif x == str(3):
-    print("debug3")
 
-elif x == str(4):
-    print("debug4")
+    elif x == str(2):
+        print("debug2")
 
-elif x == str(5):
-    print("debug5")
 
-elif x == str(6):
-    print("debug6")
+    elif x == str(3):
+        print("debug3")
 
-else:
-    print("debug boucle a recommancer")
+
+    elif x == str(4):
+        print("debug4")
+
+
+    elif x == str(5):
+        print("debug5")
+
+
+    elif x == str(6):
+        print("debug6")
+
+
+    else:
+        print("debug boucle a recommancer")
+
+    choix_multiple()
+
+        ###"!!!j'arrétte avec la problématique suivante: mon choix multiple ne fonctionne pas et ma boucle reste boucler sur la fonction initialement choisi dans X

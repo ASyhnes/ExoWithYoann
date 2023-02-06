@@ -1,79 +1,155 @@
-#Exercice 5 (secondaire) :
-#Soit à développer une application pour la gestion d’un stock. Un article est caractérisé
-#par son numéro de référence, son nom, son prix de vente et une quantité en stock. Le
-#stock est représenté par une collection d’articles.
-#Créer la classe article contenant les éléments suivants :
-#● Les attributs/propriétés.
-#● Un constructeur d’initialisation.
-#● La méthode ToString().>https://www.delftstack.com/fr/howto/python/tostring-equivalent-python/$
-
-#Dans la classe Program créer :
-#Le stock sous forme d'une collection d’articles de votre choix. #crer une liste et .append
-
-#Un menu présentant les fonctionnalités suivantes : #choisir les option:1, 2, 3 ect....???
-#1. Rechercher un article par référence. #input>ref>imprim propriété
-#2. Ajouter un article au stock en vérifiant l’unicité de la référence. #input>nouvel articl> propriété?>verif ref
-#3. Supprimer un article par référence. #input ref artic a suprimer> chercher article>suprimer
-#4. Modifier un article par référence.
-#5. Rechercher un article par nom.
-#6. Rechercher un article par  intervalle de prix de vente.
-#7. Afficher tous les articles>re'def str
-
-class Article:
-    def __init__(self, nbref, nom, prixvente, quantstock):
-        self.nbref = nbref
-        self.nom = nom
-        self.prixvente = prixvente
-        self.quantstock = quantstock
+"""Ici, nous allons serrer des vis et taper sur des clous!"""
 
 
-class Programm_Stock:
-    """Creer le programme."""
+class ToolBox:
+    """Boite à outils."""
 
     def __init__(self):
-        """Initialise le stock d'article."""
-        self.stock = []
+        """Initialise les outils."""
+        self.tools = []
 
-    def add_artcl(self, artcl):
-        """Ajoute un article."""
-        self.stock.append(artcl)
+    def add_tool(self, tool):
+        """Ajoute un outil."""
+        self.tools.append(tool)
 
-    def remove_artcl(self, artcl):
-        """Enleve un article."""
-        index = self.stock.index(artcl)
-        del self.stock[index]
+    def remove_tool(self, tool):
+        """Enleve un outil."""
+        index = self.tools.index(tool)
+        del self.tools[index]
 
-Y = Programm_Stock()
 
-#y.add_artcl(nomde l'article)>permetderajouter unarticle dans le program
+class Screwdriver:
+    """Tournevis."""
 
-print("que souhaitez vous faire:"
-      "\n 1: ajouter un article " #(en verifier qu'il a une ref unique)
-      "\n 2: rechercher un article par ref "
-      "\n 3: rechercher un article par nom"
-      "\n 4: rechercher un article par prix" #liste de tranche de prix
-      "\n 5: afficher tout les articles"
-      "\n 6: modifier un article") #liste choix>modifier
+    def __init__(self, size=3):
+        """Initialise la taille."""
+        self.size = size
 
-x = input()
+    def tighten(self, screw):
+        """Serrer une vis."""
+        screw.tighten()
 
-if x == str(1):
-    print("debug1")
+    def loosen(self, screw):
+        """Desserre une vis."""
+        screw.loosen()
 
-elif x == str(2):
-    print("debug2")
+    def __repr__(self):
+        """Représentation de l'objet."""
+        return f"Tournevis de taille {self.size}"
 
-elif x == str(3):
-    print("debug3")
 
-elif x == str(4):
-    print("debug4")
+class Hammer:
+    """Marteau."""
 
-elif x == str(5):
-    print("debug5")
+    def __init__(self, color="red"):
+        """Initialise la couleur."""
+        self.color = color
 
-elif x == str(6):
-    print("debug6")
+    def paint(self, color):
+        """Paint le marteau."""
+        self.color = color
 
-else:
-    print("debug boucle a recommancer")
+    def hammer_in(self, nail):
+        """Enfonce un clou."""
+        nail.nail_in()
+
+    def remove(self, nail):
+        """Enleve un clou."""
+        nail.remove()
+
+    def __repr__(self):
+        """Représentation de l'objet."""
+        return f"Marteau de couleur {self.color}"
+
+
+class Screw:
+    """Vis."""
+
+    MAX_TIGHTNESS = 5
+
+    def __init__(self):
+        """Initialise son degré de serrage."""
+        self.tightness = 0
+
+    def loosen(self):
+        """Déserre le vis."""
+        if self.tightness > 0:
+            self.tightness -= 1
+
+    def tighten(self):
+        """Serre le vis."""
+        if self.tightness < self.MAX_TIGHTNESS:
+            self.tightness += 1
+
+    def __str__(self):
+        """Retourne une forme lisible de l'objet."""
+        return "Vis avec un serrage de {}".format(self.tightness)
+
+
+class Nail:
+    """Clou."""
+
+    def __init__(self):
+        """Initialise son statut "dans le mur"."""
+        self.in_wall = False
+
+    def nail_in(self):
+        """Enfonce le clou dans un mur."""
+        if not self.in_wall:
+            self.in_wall = True
+
+    def remove(self):
+        """Enlève le clou du mur."""
+        if self.in_wall:
+            self.in_wall = False
+
+    def __str__(self):
+        """Retourne une forme lisible de l'objet."""
+        wall_state = "dans le mur" if self.in_wall else "hors du mur"
+        return f"Clou {wall_state}."
+
+
+# Instanciez une boîte à outils, un tournevis, et un marteau.
+hammer = Hammer()
+screwdriver = Screwdriver()
+toolbox = ToolBox()
+
+# Placez le marteau et le tournevis dans la boîte à outils.
+toolbox.add_tool(hammer)
+toolbox.add_tool(screwdriver)
+
+# Instanciez une vis, et serrez-la avec le tournevis.
+# Affichez la vis avant après avoir été serrée.
+screw = Screw()
+print(screw)
+screwdriver.tighten(screw)
+print(screw)
+
+# Instanciez un clou, puis enfoncez-le avec le marteau.
+# Affichez le clou avant et après avoir été enfoncé.
+nail = Nail()
+print(nail)
+hammer.hammer_in(nail)
+print(nail)
+
+
+# --------------------------------------------------------------
+# Que pouvez-vous faire d’autre avec ces classes et ces objets ?
+
+# enlever un outil
+print("outils dans la boîte:", toolbox.tools)
+toolbox.remove_tool(hammer)
+print("on a enlevé le marteau")
+print("outils dans la boîte:", toolbox.tools)
+
+# désserrer la vis
+screwdriver.loosen(screw)
+print(screw)
+
+# enlever le clou
+hammer.remove(nail)
+print(nail)
+
+# repeindre le marteau
+hammer.paint("yellow")
+print(hammer)
