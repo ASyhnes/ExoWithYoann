@@ -65,7 +65,7 @@ class Programm:
                 print("objet trouvé:", artcl)
                 break
             else:
-                print("objet non référencié")
+                print("objet non référencé")
 
     def search_name(self):
         search_ref_param = input("entrez le nom de l'objet à trouver: \n")
@@ -74,7 +74,16 @@ class Programm:
                 print("objet trouvé:", artcl)
                 break
             else:
-                print("objet non référencié")
+                print("objet non référencé")
+
+    def search_prix(self):
+        search_ref_param = input("entrez le prix pour afficher les objets: \n")
+        for artcl in (self.stock):
+            if artcl[2] == search_ref_param:
+                print(obj, "objet(s) trouvé(s):", artcl)
+
+            else:
+                print("objet non référencé")
 
     def remove_artcl(self, artcl):
         """Enleve un article."""
@@ -83,6 +92,30 @@ class Programm:
 
     def print_all_article(self):
         print(Gestionstock.stock)
+
+    def modif_article(self):
+        chx = input("entrez la ref de l'objet à modifier : \n")
+        for artcl in (self.stock):
+            if artcl[0] == chx:
+                print("que voulez vous changer? \n"
+                      "1 : ref \n"
+                      "2 : nom \n"
+                      "3 : prix \n"
+                      "4 : quantité\n")
+                chx2 = str(input())
+                    if chx2 == str(1): #bug ici 'unbexpected indent
+                        print("debug")
+                    if chx2 == str(2):
+                        print("debug")
+                    if chx2 == str(3):
+                        print("debug")
+                    if chx2 == str(4):
+                        print("debug")
+
+        else:
+            print("mauvaise comande")
+
+
 
 
 
@@ -96,7 +129,7 @@ choix = ("que souhaitez vous faire:"
       "\n 1: ajouter un article "  #ok
       "\n 2: rechercher un article par ref " #ok> la methode __str__ ne marche pas bien
       "\n 3: rechercher un article par nom" #ok> la methode __str__ ne marche pas bien
-      "\n 4: rechercher un article par prix"  
+      "\n 4: rechercher un article par prix"  #ok> la methode __str__ ne marche pas bien
       "\n 5: afficher tout les articles" #ok
       "\n 6: modifier un article"  # liste choix>modifier
       "\n 7: End")
@@ -116,7 +149,7 @@ while x != str(7):
         y = Article("","","","")
         Gestionstock.add_artcl(y)
         #debug
-        print(y)
+        print(repr(y))
         print("debug1")
 
     elif x == str(2):
@@ -134,6 +167,9 @@ while x != str(7):
 
 
     elif x == str(4):
+        Gestionstock.search_prix()
+        # debug
+        print(y)
         print("debug4")
 
 
@@ -144,6 +180,7 @@ while x != str(7):
 
 
     elif x == str(6):
+        Gestionstock.modif_article()
         print("debug6")
 
 
