@@ -26,6 +26,9 @@ class Article:
         self.prixvente = prixvente
         self.quantstock = quantstock
 
+    def __str__(self):
+        return f'Article:(Ref={self.nbref}, Nom={self.nom}, Prix de vente={self.prixvente}, En stock={self.quantstock})'
+
     def __repr__(self):
         """Représentation de l'article."""
         return f" {self.nbref, self.nom, self.prixvente, self.quantstock}"
@@ -41,12 +44,46 @@ class Programm:
     def add_artcl(self, artcl):
         """Ajoute un article."""
         y = input("ref 3 nombre \n"), input("nom de l'article \n"), input("prix \n"), input("quantité en stock ? \n")
-        self.stock.append(y)
+        for obj in (self.stock):
+            if obj[0] == y[0]:
+                print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! \n"
+                      "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! \n"
+                      "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! \n"
+                      "Error: 'ref 3 nombre' already exists in another object, retry !! \n"
+                      "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! \n"
+                      "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! \n"
+                      "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! \n")
+                break
+        else:
+            self.stock.append(y)
+            print("The new object has been added to the list")
+
+    def search_ref(self):
+        search_ref_param = input("entrez la ref de l'objet à trouver: \n")
+        for artcl in (self.stock):
+            if artcl[0] == search_ref_param:
+                print("objet trouvé:", artcl)
+                break
+            else:
+                print("objet non référencié")
+
+    def search_name(self):
+        search_ref_param = input("entrez le nom de l'objet à trouver: \n")
+        for artcl in (self.stock):
+            if artcl[1] == search_ref_param:
+                print("objet trouvé:", artcl)
+                break
+            else:
+                print("objet non référencié")
 
     def remove_artcl(self, artcl):
         """Enleve un article."""
         index = self.stock.index(artcl)
         del self.stock[index]
+
+    def print_all_article(self):
+        print(Gestionstock.stock)
+
 
 
 
@@ -56,36 +93,43 @@ class Programm:
 Gestionstock = Programm()
 
 choix = ("que souhaitez vous faire:"
-      "\n 1: ajouter un article "  # (en verifier qu'il a une ref unique)
-      "\n 2: rechercher un article par ref "
-      "\n 3: rechercher un article par nom"
-      "\n 4: rechercher un article par prix"  # liste de tranche de prix
-      "\n 5: afficher tout les articles"
+      "\n 1: ajouter un article "  #ok
+      "\n 2: rechercher un article par ref " #ok> la methode __str__ ne marche pas bien
+      "\n 3: rechercher un article par nom" #ok> la methode __str__ ne marche pas bien
+      "\n 4: rechercher un article par prix"  
+      "\n 5: afficher tout les articles" #ok
       "\n 6: modifier un article"  # liste choix>modifier
       "\n 7: End")
 
-print(choix)
-x = input()
 def choix_multiple():
     print(choix)
 
+print(choix)
+x = str(input())
 
 
-while x != 7:
-    if x == str(1):
+
+
+while x != str(7):
+
+    if x == str(1):  #fonctionne ok
         y = Article("","","","")
         Gestionstock.add_artcl(y)
         #debug
         print(y)
         print("debug1")
-        print(Gestionstock.stock)
-
 
     elif x == str(2):
+        Gestionstock.search_ref()
+        # debug
+        print(y)
         print("debug2")
 
 
     elif x == str(3):
+        Gestionstock.search_name()
+        # debug
+        print(y)
         print("debug3")
 
 
@@ -94,7 +138,9 @@ while x != 7:
 
 
     elif x == str(5):
+        print(Gestionstock.stock)
         print("debug5")
+
 
 
     elif x == str(6):
@@ -102,9 +148,9 @@ while x != 7:
 
 
     else:
-        print("debug boucle a recommancer")
+        print("COMMANDE NON VALIDE!!!")
 
     choix_multiple()
-    x = int(input())
+    x = str(input())
 
         ###"!!!j'arrétte avec la problématique suivante: mon choix multiple ne fonctionne pas et ma boucle reste boucler sur la fonction initialement choisi dans X

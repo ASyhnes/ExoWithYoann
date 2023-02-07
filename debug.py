@@ -1,8 +1,9 @@
-x = input()
+objects = [("A", "foo"), ("B", "bar"), ("C", "baz")]
+search_param = "bar"
 
-def choix_multiple():
-    x = int(input())
-
-while x != 7:
-    print("dbug")
-    choix_multiple()
+for obj in objects:
+    if obj[1] == search_param:
+        print("The object has been found:", obj)
+        break
+else:
+    print("Error: the object was not found")
