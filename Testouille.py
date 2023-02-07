@@ -103,14 +103,14 @@ class Programm:
                       "3 : prix \n"
                       "4 : quantité\n")
                 chx2 = str(input())
-                    if chx2 == str(1): #bug ici 'unbexpected indent
+                 '''if chx2 == str(1):                                        !!!!!!!!!!#bug ici 'unbexpected indent'!!!!!!!
                         print("debug")
                     if chx2 == str(2):
                         print("debug")
                     if chx2 == str(3):
                         print("debug")
                     if chx2 == str(4):
-                        print("debug")
+                        print("debug")'''
 
         else:
             print("mauvaise comande")
