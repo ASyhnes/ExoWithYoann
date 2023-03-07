@@ -1,9 +1,21 @@
-objects = [("A", "foo"), ("B", "bar"), ("C", "baz")]
-search_param = "bar"
+def binary_search(arr, x):
+  low = 0
+  high = len(arr) - 1
+  while low <= high:
+    mid = (low + high) // 2
+    if arr[mid] == x:
+      return mid
+    elif arr[mid] < x:
+      low = mid + 1
+    else:
+      high = mid - 1
+  return -1
 
-for obj in objects:
-    if obj[1] == search_param:
-        print("The object has been found:", obj)
-        break
+arr = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+x = 5
+result = binary_search(arr, x)
+
+if result != -1:
+  print("Element is present at index", str(result))
 else:
-    print("Error: the object was not found")
+  print("Element is not present in array")
