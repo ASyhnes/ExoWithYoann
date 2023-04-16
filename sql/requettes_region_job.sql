@@ -92,9 +92,11 @@ SELECT employees.first_name, employees.last_name
 		WHERE manager_id IS NULL;
 
 /*14. Afficher le nombre salarié ayant le manager avec l’id 100*/
-SELECT COUNT (employees.first_name, employees.last_name)
+/*SELECT COUNT (employees.first_name, employees.last_name)
 	FROM employees
-		WHERE manager_id ;
+		WHERE manager_id ;*/
+
+		
 /*15. Afficher l’id du manager ainsi que le nombre de salarié qu’il gère pour chaque id*/
 /*16. Afficher les localisations et les pays */
 /*17. Afficher la liste des employés embauchés entre le 17/06/03 et le 21/09/05*/
